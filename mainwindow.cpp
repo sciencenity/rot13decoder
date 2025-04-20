@@ -30,9 +30,12 @@ void MainWindow::on_pushButton_clicked()
 {
     QString toEncode = ui->lineEdit->text();
     std::string str = toEncode.toStdString();
-    if(ui->radioButton->isChecked()){
-        ui->textBrowser->setText(rot(str));
-    }else{
+    ui->textBrowser->setText(rot(str));
+}
+void MainWindow::keyPressEvent(QKeyEvent *e){
+    if(e->key() == Qt::Key_Control){
+        QString toEncode = ui->lineEdit->text();
+        std::string str = toEncode.toStdString();
         ui->textBrowser->setText(rot(str));
     }
 }
