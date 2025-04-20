@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include<QKeyEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,5 +22,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QString rot(std::string str);
+protected:
+    void keyPressEvent(QKeyEvent *e) override;
 };
 #endif // MAINWINDOW_H
